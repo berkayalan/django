@@ -1,0 +1,11 @@
+{% load static %}
+
+<div class="card">
+    <img class="card-img-top" src="{{movie.movie_image}}" alt="{{movie.Name}}" width="300" height="400">
+    <div class="card-body">
+        <h5 class="card-title">{{movie.movie_name}}</h5>
+        <p class="card-text">{{movie.movie_year}}</p>
+        <a href="{% url 'details' movie.id %}" class="btn btn-primary">Details</a>
+        <a href="{{movie.movie_link}}" class="btn btn-danger">Go to Movie</a>
+    </div>
+</div>

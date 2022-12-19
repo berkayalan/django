@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+
+    {% include 'partials/_navbar.html' %}
+
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-12">
+                <div class="card mb-3">
+                  <div class="row no-gutters">
+                    <div class="col-md-4">
+                      <img src="{{movie.movie_image}}" class="card-img" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">{{movie.movie_name}}</h5>
+                        <p class="card-text">Year : {{movie.movie_year}}</p>
+                        <p class="card-text">Category : {{movie.movie_category}}</p>
+                        <a href="{{movie.movie_link}}" class="btn btn-danger">Go to Movie Detail</a>
+                        <a href="{% url 'category_details' movie.movie_category %}" class="btn btn-primary">Go to Category Page</a>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

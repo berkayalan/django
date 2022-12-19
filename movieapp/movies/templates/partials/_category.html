@@ -1,0 +1,10 @@
+{% load static %}
+
+<div class="card">
+    <img class="card-img-top" src="{% static 'cat_img/'|add:category.category_image%}" alt="{{category.category_name}}" width="200" height="300">
+    <div class="card-body">
+        <h5 class="card-title">{{category.category_name}}</h5>
+        <a href="{% url 'category_details' category.category_name %}" class="btn btn-primary">Details</a>
+    </div>
+</div>
+
